@@ -1,7 +1,7 @@
 {
-  "name": "webpack-react-learn",
+  "name": "m-days-react",
   "version": "1.0.0",
-  "description": "Boilerplate for react and webpack",
+  "description": "Just learn react.js. Take no notice",
   "main": "index.js",
   "scripts": {
     "start": "cross-env NODE_ENV=development webpack-serve --open",
@@ -32,7 +32,7 @@
       "jsx"
     ]
   },
-  "repository": "https://github.com/Kara8ass1337/webpack-react-learn",
+  "repository": "https://github.com/Kara8ass1337/m-days-react",
   "author": "Oleg Shilov",
   "license": "ISC",
   "private": false,
