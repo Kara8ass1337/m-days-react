@@ -1,7 +1,7 @@
 {
   "name": "m-days-react",
   "version": "1.0.0",
-  "description": "Just learn react.js. Take no notice",
+  "description": "just learning react, take no notice",
   "main": "index.js",
   "scripts": {
     "start": "cross-env NODE_ENV=development webpack-serve --open",
