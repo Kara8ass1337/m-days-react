@@ -1,6 +1,5 @@
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const OpenBrowserPlugin = require('open-browser-webpack-plugin');
 const path = require('path');
 const commonPaths = require('./paths');
 
@@ -54,9 +53,6 @@ module.exports = {
     new webpack.ProgressPlugin(),
     new HtmlWebpackPlugin({
       template: commonPaths.templatePath,
-    }),
-    new OpenBrowserPlugin({
-      url: 'http://localhost:3001',
     }),
   ],
 };
