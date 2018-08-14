@@ -12,6 +12,7 @@
     "fetch": true
   },
   "rules": {
+    "comma-dangle": "off",
     "indent": ["error", 2],
     "react/prefer-stateless-function": "warn",
     "react/self-closing-comp": [
