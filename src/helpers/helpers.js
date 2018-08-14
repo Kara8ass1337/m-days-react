@@ -10,7 +10,7 @@ export function randomStr(length = 5) {
   let text = '';
   const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
 
-  for (let i = 0; i < length; i++) {
+  for (let i = 0; i < length; i += 1) {
     text += letters.charAt(Math.floor(Math.random() * letters.length));
   }
 
@@ -37,7 +37,7 @@ export function getArrayWithUniqueItems(length) {
 
   const arr = [];
 
-  for (let i = 0; i <= length; i++) {
+  for (let i = 0; i <= length; i += 1) {
     arr[i] = randomStr();
   }
 

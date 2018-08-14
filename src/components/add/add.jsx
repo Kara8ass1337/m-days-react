@@ -66,8 +66,8 @@ export default class Add extends React.Component {
           value={text}
           placeholder="Текст новости"
           onChange={this.handleChange} />
-        <label className={style.checkrule}>
-          <input type="checkbox" onChange={this.handleCheck} />
+        <label htmlFor="i-agree" className={style.checkrule}>
+          <input type="checkbox" id="i-agree" onChange={this.handleCheck} />
           Я согласен с правилами
         </label>
         <button type="button" className={style.btn} disabled={!this.validate()} onClick={this.handleClick}>

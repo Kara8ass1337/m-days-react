@@ -1,6 +1,7 @@
 const commonPaths = require('./paths');
 
 module.exports = {
+  devtool: 'source-map',
   mode: 'development',
   output: {
     filename: '[name].js',

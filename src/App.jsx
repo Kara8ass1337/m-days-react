@@ -20,7 +20,7 @@ class App extends React.Component {
     this.handleAddNews = ::this.handleAddNews;
   }
 
-  static getDerivedStateFromProps(props, state) {
+  static getDerivedStateFromProps(props) {
     /**
      * для корректной работы метода
      * нужно возвращать новый state в правильном формате.

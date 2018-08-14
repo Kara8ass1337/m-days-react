@@ -1,8 +1,10 @@
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const commonPaths = require('./paths');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const autoprefixer = require('autoprefixer');
+const commonPaths = require('./paths');
 
 module.exports = {
+  devtool: 'source-map',
   mode: 'production',
   output: {
     filename: `${commonPaths.jsFolder}/[name].[hash].js`,
@@ -23,6 +25,13 @@ module.exports = {
               localIdentName: '[local]___[hash:base64:5]',
             },
           },
+          {
+            loader: 'postcss-loader',
+            options: {
+              sourceMap: true,
+              plugins: [autoprefixer()],
+            },
+          },
           'sass-loader',
         ],
       },
@@ -37,5 +46,4 @@ module.exports = {
       chunkFilename: '[id].css',
     }),
   ],
-  devtool: 'source-map',
 };

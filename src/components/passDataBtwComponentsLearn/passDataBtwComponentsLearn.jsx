@@ -1,13 +1,16 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import style from './passDataBtwComponentsLearn.scss';
 
 export default class PassDataBtwComponentsLearn extends React.Component {
   constructor(props) {
     super(props);
 
+    const { color } = this.props;
+
     this.state = {
       h1Style: {
-        color: this.props.color,
+        color,
       },
     };
   }
@@ -40,3 +43,7 @@ This text must change color
     );
   }
 }
+
+PassDataBtwComponentsLearn.propTypes = {
+  color: PropTypes.string,
+};
