@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Button } from 'react-bootstrap';
-import { alwaysTwoDigits } from 'helpers/helpers';
+import { alwaysTwoDigits } from '../../helpers/helpers';
 import style from './clock.scss';
 import { getRandomColor } from '../../helpers/helpers';
 
@@ -101,9 +100,9 @@ export default class Clock extends React.Component {
         <div>
           {this.getDate()}
         </div>
-        <Button bsStyle="success" style={btnStyle} onClick={this.handleClick}>
+        <button type="button" style={btnStyle} onClick={this.handleClick}>
           Touch me
-        </Button>
+        </button>
       </div>
     );
   }
