@@ -1,5 +1,7 @@
 import React from 'react';
 import { hot } from 'react-hot-loader';
+import './assets/styles/styles.scss';
+import Index from './pages/index';
 
 class App extends React.Component {
   constructor(props) {
@@ -8,15 +10,9 @@ class App extends React.Component {
     this.state = {};
   }
 
-  componentDidMount() {
-
-  }
-
   render() {
     return (
-      <React.Fragment>
-        m-days new frontend
-      </React.Fragment>
+      <Index />
     );
   }
 }

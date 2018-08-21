@@ -6,12 +6,10 @@
   "scripts": {
     "start": "cross-env NODE_ENV=development webpack-dev-server --hot --inline --open --config webpack.config.js",
     "build": "cross-env NODE_ENV=production webpack --optimize-minimize",
-    "format": "prettier --write 'packages/**/*.js'",
     "test": "jest --watchAll --coverage"
   },
   "lint-staged": {
     "*.{js,jsx,css,md}": [
-      "prettier --write --single-quote",
       "eslint --fix",
       "git add"
     ]
@@ -106,8 +104,6 @@
     "postcss": "^7.0.2",
     "postcss-loader": "^3.0.0",
     "postcss-reporter": "^5.0.0",
-    "prettier": "1.13.7",
-    "pretty-quick": "1.6.0",
     "sass-loader": "7.0.3",
     "style-loader": "0.21.0",
     "webpack": "4.16.1",
