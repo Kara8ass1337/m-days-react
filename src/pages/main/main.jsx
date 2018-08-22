@@ -1,8 +1,8 @@
 import React from 'react';
-import './index.scss';
+import './main.scss';
 import ProgressIndicator from 'components/progressIndicator/ProgressIndicator';
 
-export default class Index extends React.PureComponent {
+export default class Main extends React.PureComponent {
   constructor() {
     super();
 

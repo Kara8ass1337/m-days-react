@@ -1,7 +1,7 @@
 import React from 'react';
 import { hot } from 'react-hot-loader';
 import './assets/styles/styles.scss';
-import Index from './pages/index';
+import Main from './pages/main/main';
 
 class App extends React.Component {
   constructor(props) {
@@ -12,7 +12,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <Index />
+      <Main />
     );
   }
 }
