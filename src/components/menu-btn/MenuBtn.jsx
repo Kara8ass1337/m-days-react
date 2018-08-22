@@ -1,41 +1,18 @@
 import React from 'react';
 import './menu-btn.scss';
+import propTypes from 'prop-types';
 import autobind from 'autobind-decorator';
 
-export default class MenuBtn extends React.PureComponent {
-  constructor() {
-    super();
-
-    this.state = {
-      isActive: false
-    };
-  }
-
+export default class MenuBtn extends React.Component {
   @autobind
   handleClick() {
-    this.toggleState();
-  }
+    const { toggleState } = this.props;
 
-  /**
-   *
-   * @param [state] {boolean}
-   */
-  toggleState(state) {
-    const { isActive } = this.state;
-
-    if (typeof state === 'boolean') {
-      this.setState({
-        isActive: state
-      });
-    } else {
-      this.setState({
-        isActive: !isActive
-      });
-    }
+    toggleState();
   }
 
   render() {
-    const { isActive } = this.state;
+    const { isActive } = this.props;
 
     return (
       <button
@@ -47,3 +24,12 @@ export default class MenuBtn extends React.PureComponent {
     );
   }
 }
+
+MenuBtn.propTypes = {
+  isActive: propTypes.bool,
+  toggleState: propTypes.func.isRequired
+};
+
+MenuBtn.defaultProps = {
+  isActive: false
+};
