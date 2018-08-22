@@ -102,7 +102,8 @@ export default class ProgressIndicator extends React.PureComponent {
               <div className="progress-indicator__progress-bar">
                 <div className="progress-indicator__progress-bar__bg" />
                 <div
-                  className="progress-indicator__progress-bar__walking" />
+                  className="progress-indicator__progress-bar__walking"
+                  style={{ width: `${values.progressFull}%` }} />
               </div>
               <div className="progress-indicator__day">
                 {`${values.dayCount} of ${values.daysInYear} `}
