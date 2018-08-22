@@ -1,6 +1,7 @@
 import React from 'react';
 import './main.scss';
 import ProgressIndicator from 'components/progressIndicator/ProgressIndicator';
+import MenuBtn from 'components/menu-btn/MenuBtn';
 
 export default class Main extends React.PureComponent {
   constructor() {
@@ -12,8 +13,7 @@ export default class Main extends React.PureComponent {
   render() {
     return (
       <div className="main-wrapper">
-        {/* todo: menu-btn;
-        todo: popup; */}
+        <MenuBtn />
         <ProgressIndicator />
 
         <div className="bg" />
