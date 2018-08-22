@@ -5,10 +5,14 @@ export default class Menu extends React.PureComponent {
   constructor() {
     super();
 
-    this.state = {};
+    this.state = {
+      page: 'main'
+    };
   }
 
   render() {
+    const { page } = this.state;
+
     return (
       <div className="menu">
         <div className="popup__logo">
@@ -26,12 +30,17 @@ export default class Menu extends React.PureComponent {
             accompanied with best author&apos;s photos.
           </div>
           <div className="popup__item">
-            <a href="#">
-              More about us
-            </a>
-            <a href="#">
-              Go to main
-            </a>
+            {page === 'about' && (
+              <a href="#">
+                More about us
+              </a>
+            )}
+
+            {page === 'main' && (
+              <a href="#">
+                Go to main
+              </a>
+            )}
           </div>
           <div className="popup__item">
             Send us your works to
