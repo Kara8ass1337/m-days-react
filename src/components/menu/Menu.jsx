@@ -4,14 +4,6 @@ import propTypes from 'prop-types';
 import autobind from 'autobind-decorator';
 
 export default class Menu extends React.PureComponent {
-  constructor() {
-    super();
-
-    this.state = {
-      page: 'main'
-    };
-  }
-
   @autobind
   handleDonateClick(e) {
     const { toggleStateContent } = this.props;
@@ -23,15 +15,26 @@ export default class Menu extends React.PureComponent {
 
   @autobind
   handleGoToMainClick(e) {
-    const { toggleStatePopup } = this.props;
+    const { toggleStateMenu, changePage } = this.props;
 
     e.preventDefault();
 
-    toggleStatePopup(false);
+    toggleStateMenu(false);
+    changePage('main');
+  }
+
+  @autobind
+  handleMoreAboutUsClick(e) {
+    const { toggleStateMenu, changePage } = this.props;
+
+    e.preventDefault();
+
+    toggleStateMenu(false);
+    changePage('about');
   }
 
   render() {
-    const { page } = this.state;
+    const { activePage } = this.props;
 
     return (
       <div className="menu">
@@ -50,15 +53,15 @@ export default class Menu extends React.PureComponent {
             accompanied with best author&apos;s photos.
           </div>
           <div className="popup__item">
-            {page === 'about' && (
-              <a href="#">
-                More about us
+            {activePage === 'about' && (
+              <a href="#" onClick={this.handleGoToMainClick}>
+                Go to main
               </a>
             )}
 
-            {page === 'main' && (
-              <a href="#" onClick={this.handleGoToMainClick}>
-                Go to main
+            {activePage === 'main' && (
+              <a href="#" onClick={this.handleMoreAboutUsClick}>
+                More about us
               </a>
             )}
           </div>
@@ -111,6 +114,8 @@ export default class Menu extends React.PureComponent {
 }
 
 Menu.propTypes = {
+  activePage: propTypes.string.isRequired,
+  changePage: propTypes.func.isRequired,
   toggleStateContent: propTypes.func.isRequired,
-  toggleStatePopup: propTypes.func.isRequired
+  toggleStateMenu: propTypes.func.isRequired
 };
