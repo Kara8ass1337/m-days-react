@@ -1,5 +1,7 @@
 import React from 'react';
 import './menu.scss';
+import propTypes from 'prop-types';
+import autobind from 'autobind-decorator';
 
 export default class Menu extends React.PureComponent {
   constructor() {
@@ -8,6 +10,24 @@ export default class Menu extends React.PureComponent {
     this.state = {
       page: 'main'
     };
+  }
+
+  @autobind
+  handleDonateClick(e) {
+    const { toggleStateContent } = this.props;
+
+    e.preventDefault();
+
+    toggleStateContent('donate');
+  }
+
+  @autobind
+  handleGoToMainClick(e) {
+    const { toggleStatePopup } = this.props;
+
+    e.preventDefault();
+
+    toggleStatePopup(false);
   }
 
   render() {
@@ -37,7 +57,7 @@ export default class Menu extends React.PureComponent {
             )}
 
             {page === 'main' && (
-              <a href="#">
+              <a href="#" onClick={this.handleGoToMainClick}>
                 Go to main
               </a>
             )}
@@ -80,7 +100,7 @@ export default class Menu extends React.PureComponent {
             </div>
           </div>
           <div className="popup__item">
-            <a>
+            <a href="#" onClick={this.handleDonateClick}>
               Donate
             </a>
           </div>
@@ -89,3 +109,8 @@ export default class Menu extends React.PureComponent {
     );
   }
 }
+
+Menu.propTypes = {
+  toggleStateContent: propTypes.func.isRequired,
+  toggleStatePopup: propTypes.func.isRequired
+};

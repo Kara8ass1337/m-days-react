@@ -1,6 +1,7 @@
 import React from 'react';
 import './popup.scss';
 import propTypes from 'prop-types';
+import autobind from 'autobind-decorator';
 import Menu from '../menu/Menu';
 import Donate from '../donate/Donate';
 
@@ -13,14 +14,33 @@ export default class Popup extends React.Component {
     };
   }
 
+  /**
+   *
+   * @param state {boolean}
+   */
+  @autobind
+  toggleStateContent(state) {
+    if (typeof state === 'string') {
+      this.setState({
+        activeContent: state
+      });
+    }
+  }
+
   render() {
-    const { isActive } = this.props;
+    const { isActive, toggleState } = this.props;
+    const { activeContent } = this.state;
 
     return (
       <div className={`popup-wrapper ${isActive ? 'is-active' : ''}`}>
         <div className="popup">
-          <Menu />
-          <Donate />
+          {activeContent === 'menu' && (
+            <Menu toggleStateContent={this.toggleStateContent} toggleStatePopup={toggleState} />
+          )}
+
+          {activeContent === 'donate' && (
+            <Donate toggleStateContent={this.toggleStateContent} />
+          )}
         </div>
       </div>
     );
