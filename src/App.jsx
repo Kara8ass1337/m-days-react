@@ -2,6 +2,7 @@ import React from 'react';
 import { hot } from 'react-hot-loader';
 import './assets/styles/styles.scss';
 import autobind from 'autobind-decorator';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Main from './pages/main/Main';
 import MenuBtn from './components/menu-btn/MenuBtn';
 import Popup from './components/popup/Popup';
@@ -36,38 +37,21 @@ class App extends React.Component {
     }
   }
 
-  /**
-   *
-   * @param page {string}
-   */
-  @autobind
-  changePage(page) {
-    if (typeof page === 'string') {
-      this.setState({
-        page
-      });
-    }
-  }
-
   render() {
     const { menuIsActive, page } = this.state;
 
     return (
-      <div className="main-wrapper">
-        <MenuBtn isActive={menuIsActive} toggleState={this.toggleMenuState} />
-        <Popup
-          isActive={menuIsActive}
-          toggleState={this.toggleMenuState}
-          activePage={page}
-          changePage={this.changePage} />
-        {page === 'main' && (
-          <Main />
-        )}
-
-        {page === 'about' && (
-          <About />
-        )}
-      </div>
+      <Router>
+        <div className="main-wrapper">
+          <MenuBtn isActive={menuIsActive} toggleState={this.toggleMenuState} />
+          <Popup
+            isActive={menuIsActive}
+            toggleState={this.toggleMenuState}
+            activePage={page} />
+          <Route exact path="/" component={Main} />
+          <Route path="/about" component={About} />
+        </div>
+      </Router>
     );
   }
 }

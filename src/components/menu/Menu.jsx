@@ -2,8 +2,13 @@ import React from 'react';
 import './menu.scss';
 import propTypes from 'prop-types';
 import autobind from 'autobind-decorator';
+import { Link } from 'react-router-dom';
 
-export default class Menu extends React.PureComponent {
+export default class Menu extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
   @autobind
   handleDonateClick(e) {
     const { toggleStateContent } = this.props;
@@ -15,27 +20,23 @@ export default class Menu extends React.PureComponent {
 
   @autobind
   handleGoToMainClick(e) {
-    const { toggleStateMenu, changePage } = this.props;
+    const { toggleStateMenu } = this.props;
 
     e.preventDefault();
 
     toggleStateMenu(false);
-    changePage('main');
   }
 
   @autobind
   handleMoreAboutUsClick(e) {
-    const { toggleStateMenu, changePage } = this.props;
+    const { toggleStateMenu } = this.props;
 
     e.preventDefault();
 
     toggleStateMenu(false);
-    changePage('about');
   }
 
   render() {
-    const { activePage } = this.props;
-
     return (
       <div className="menu">
         <div className="popup__logo">
@@ -53,17 +54,26 @@ export default class Menu extends React.PureComponent {
             accompanied with best author&apos;s photos.
           </div>
           <div className="popup__item">
-            {activePage === 'about' && (
+            {/* {activePage === 'about' && (
               <a href="#" onClick={this.handleGoToMainClick}>
                 Go to main
               </a>
-            )}
+            )} */}
 
-            {activePage === 'main' && (
+            <Link to="/about">
+              More about us
+            </Link>
+
+            <h3>
+              ID:
+              {this.props.match}
+            </h3>
+
+            {/* {activePage === 'main' && (
               <a href="#" onClick={this.handleMoreAboutUsClick}>
                 More about us
               </a>
-            )}
+            )} */}
           </div>
           <div className="popup__item">
             Send us your works to
@@ -115,7 +125,6 @@ export default class Menu extends React.PureComponent {
 
 Menu.propTypes = {
   activePage: propTypes.string.isRequired,
-  changePage: propTypes.func.isRequired,
   toggleStateContent: propTypes.func.isRequired,
   toggleStateMenu: propTypes.func.isRequired
 };

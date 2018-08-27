@@ -160,6 +160,7 @@ export default class About extends React.PureComponent {
       },
       // Катерина Салдаева
       {
+        id: 'Saldaeva',
         href: 'https://vk.com/awayfromlights',
         img: '/img/about/katerina_saldaeva.jpg',
         name: 'Katerina',
