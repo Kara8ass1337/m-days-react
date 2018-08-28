@@ -2,6 +2,8 @@ import React from 'react';
 import './donate.scss';
 import propTypes from 'prop-types';
 import autobind from 'autobind-decorator';
+import BtnLink from '../btnLink/BtnLink';
+import LinkExternal from '../linkExternal/LinkExternal';
 
 export default class Donate extends React.Component {
   constructor() {
@@ -45,8 +47,6 @@ export default class Donate extends React.Component {
   @autobind
   handleGoBackClick(e) {
     const { toggleStateContent } = this.props;
-
-    e.preventDefault();
 
     toggleStateContent('menu');
   }
@@ -100,9 +100,9 @@ export default class Donate extends React.Component {
               {instructionIsActive && (
                 <div className="pay-item__instruction">
                   Go to&nbsp;
-                  <a href="https://visa.qiwi.ru/transfer/form.action" target="_blank" rel="noopener noreferrer">
+                  <LinkExternal href="https://visa.qiwi.ru/transfer/form.action" target="_blank">
                     link.
-                  </a>
+                  </LinkExternal>
                   <br />
                   Input this number:
                   <br />
@@ -129,9 +129,9 @@ export default class Donate extends React.Component {
           </div>
         </div>
         <div className="popup__go-back">
-          <a href="#" onClick={this.handleGoBackClick}>
+          <BtnLink onClick={this.handleGoBackClick}>
             Go back
-          </a>
+          </BtnLink>
         </div>
       </div>
     );

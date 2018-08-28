@@ -4,13 +4,13 @@ import propTypes from 'prop-types';
 import autobind from 'autobind-decorator';
 import { Link } from 'react-router-dom';
 import routePropsShape from 'assets/helpers/routePropsShape';
+import BtnLink from '../btnLink/BtnLink';
+import LinkExternal from '../linkExternal/LinkExternal';
 
 export default class Menu extends React.Component {
   @autobind
-  handleDonateClick(e) {
+  handleDonateClick() {
     const { toggleStateContent } = this.props;
-
-    e.preventDefault();
 
     toggleStateContent('donate');
   }
@@ -57,18 +57,18 @@ export default class Menu extends React.Component {
           </div>
           <div className="popup__item">
             Send us your works to
-            <a href="mailto:m-days@m-days.ru">
+            <LinkExternal href="mailto:m-days@m-days.ru">
               m-days@m-days.ru
-            </a>
+            </LinkExternal>
             <br />
             (please tell your name and link
             <br />
             if you want to be in the list of authors).
             <br />
             And post them in socials with
-            <a href="https://instagram.com/explore/tags/mdays/" target="_blank" rel="noopener noreferrer">
+            <LinkExternal href="https://instagram.com/explore/tags/mdays/" target="_blank">
               #mdays
-            </a>
+            </LinkExternal>
           </div>
           <div className="popup__item">
             follow us at
@@ -76,26 +76,26 @@ export default class Menu extends React.Component {
           <div className="popup__item">
             <div className="menu__soc-btns-wrapper">
               <div className="menu__soc-btn insta">
-                <a href="https://instagram.com/m0nochrome_days/" target="_blank" rel="noopener noreferrer">
+                <LinkExternal href="https://instagram.com/m0nochrome_days/" target="_blank">
                   <img src="/img/insta.png" alt="" />
-                </a>
+                </LinkExternal>
               </div>
               <div className="menu__soc-btn vk">
-                <a href="https://vk.com/mono_days" target="_blank" rel="noopener noreferrer">
+                <LinkExternal href="https://vk.com/mono_days" target="_blank">
                   <img src="/img/vk.png" alt="" />
-                </a>
+                </LinkExternal>
               </div>
               <div className="menu__soc-btn twit">
-                <a href="https://twitter.com/MonochromeDays" target="_blank" rel="noopener noreferrer">
+                <LinkExternal href="https://twitter.com/MonochromeDays" target="_blank">
                   <img src="/img/twitter.png" alt="" />
-                </a>
+                </LinkExternal>
               </div>
             </div>
           </div>
           <div className="popup__item">
-            <a href="#" onClick={this.handleDonateClick}>
+            <BtnLink onClick={this.handleDonateClick}>
               Donate
-            </a>
+            </BtnLink>
           </div>
         </div>
       </div>

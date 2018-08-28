@@ -2,6 +2,7 @@ import React from 'react';
 
 import MenuAndPopup from 'components/menu-and-popup/menuAndPopup';
 import './about.scss';
+import LinkExternal from '../../components/linkExternal/LinkExternal';
 
 export default class About extends React.PureComponent {
   constructor(props) {
@@ -201,28 +202,28 @@ export default class About extends React.PureComponent {
           <div className="about__members-wrapper">
             {/* Олег Шилов */}
             <div className="about__member">
-              <a href="https://vk.com/id15927588" target="_blank" rel="noopener noreferrer">
+              <LinkExternal href="https://vk.com/id15927588" target="_blank">
                 <img className="about__member__img" src="/img/about/shilov.jpg" alt="" />
-              </a>
+              </LinkExternal>
               <div className="about__member__name">
-                <a href="https://vk.com/id15927588" target="_blank" rel="noopener noreferrer">
+                <LinkExternal href="https://vk.com/id15927588" target="_blank">
                   Oleg
                   <br />
                   Shilov
-                </a>
+                </LinkExternal>
               </div>
             </div>
             {/* Гордей Переходов */}
             <div className="about__member">
-              <a href="https://vk.com/likilo" target="_blank" rel="noopener noreferrer">
+              <LinkExternal href="https://vk.com/likilo" target="_blank">
                 <img className="about__member__img" src="/img/about/perekhodov.jpg" alt="" />
-              </a>
+              </LinkExternal>
               <div className="about__member__name">
-                <a href="https://vk.com/likilo" target="_blank" rel="noopener noreferrer">
+                <LinkExternal href="https://vk.com/likilo" target="_blank">
                   Gordey
                   <br />
                   Perekhodov
-                </a>
+                </LinkExternal>
               </div>
             </div>
           </div>
@@ -232,11 +233,11 @@ export default class About extends React.PureComponent {
           <div className="about__members-wrapper">
             {members.map(memberCur => (
               <div key={memberCur.id} className="about__member">
-                <a href={memberCur.href} target="_blank" rel="noopener noreferrer">
+                <LinkExternal href={memberCur.href} target="_blank">
                   <img className="about__member__img" src={memberCur.img} alt="" />
-                </a>
+                </LinkExternal>
                 <div className="about__member__name">
-                  <a href={memberCur.href} target="_blank" rel="noopener noreferrer">
+                  <LinkExternal href={memberCur.href} target="_blank">
                     <span>
                       {memberCur.name}
                     </span>
@@ -244,7 +245,7 @@ export default class About extends React.PureComponent {
                     <span>
                       {memberCur.surname}
                     </span>
-                  </a>
+                  </LinkExternal>
                 </div>
               </div>
             ))}
