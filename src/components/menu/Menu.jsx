@@ -124,7 +124,6 @@ export default class Menu extends React.Component {
 }
 
 Menu.propTypes = {
-  activePage: propTypes.string.isRequired,
   toggleStateContent: propTypes.func.isRequired,
   toggleStateMenu: propTypes.func.isRequired
 };

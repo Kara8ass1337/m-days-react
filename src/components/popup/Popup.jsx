@@ -28,19 +28,14 @@ export default class Popup extends React.Component {
   }
 
   render() {
-    const {
-      isActive, toggleState, activePage
-    } = this.props;
+    const { isActive, toggleState } = this.props;
     const { activeContent } = this.state;
 
     return (
       <div className={`popup-wrapper ${isActive ? 'is-active' : ''}`}>
         <div className="popup">
           {activeContent === 'menu' && (
-            <Menu
-              toggleStateContent={this.toggleStateContent}
-              toggleStateMenu={toggleState}
-              activePage={activePage} />
+            <Menu toggleStateContent={this.toggleStateContent} toggleStateMenu={toggleState} />
           )}
 
           {activeContent === 'donate' && (
@@ -54,7 +49,6 @@ export default class Popup extends React.Component {
 
 Popup.propTypes = {
   isActive: propTypes.bool,
-  activePage: propTypes.string.isRequired,
   toggleState: propTypes.func.isRequired
 };
 
