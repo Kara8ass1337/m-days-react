@@ -3,12 +3,9 @@ import './menu.scss';
 import propTypes from 'prop-types';
 import autobind from 'autobind-decorator';
 import { Link } from 'react-router-dom';
+import routePropsShape from 'assets/helpers/routePropsShape';
 
 export default class Menu extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   @autobind
   handleDonateClick(e) {
     const { toggleStateContent } = this.props;
@@ -19,24 +16,16 @@ export default class Menu extends React.Component {
   }
 
   @autobind
-  handleGoToMainClick(e) {
+  handleLinkClick() {
     const { toggleStateMenu } = this.props;
-
-    e.preventDefault();
-
-    toggleStateMenu(false);
-  }
-
-  @autobind
-  handleMoreAboutUsClick(e) {
-    const { toggleStateMenu } = this.props;
-
-    e.preventDefault();
 
     toggleStateMenu(false);
   }
 
   render() {
+    const { routeProps } = this.props;
+    const { match } = routeProps;
+
     return (
       <div className="menu">
         <div className="popup__logo">
@@ -54,26 +43,17 @@ export default class Menu extends React.Component {
             accompanied with best author&apos;s photos.
           </div>
           <div className="popup__item">
-            {/* {activePage === 'about' && (
-              <a href="#" onClick={this.handleGoToMainClick}>
+            {match.path === '/about' && (
+              <Link to="/" onClick={this.handleLinkClick}>
                 Go to main
-              </a>
-            )} */}
+              </Link>
+            )}
 
-            <Link to="/about">
-              More about us
-            </Link>
-
-            <h3>
-              ID:
-              {this.props.match}
-            </h3>
-
-            {/* {activePage === 'main' && (
-              <a href="#" onClick={this.handleMoreAboutUsClick}>
+            {match.path === '/' && (
+              <Link to="/about" onClick={this.handleLinkClick}>
                 More about us
-              </a>
-            )} */}
+              </Link>
+            )}
           </div>
           <div className="popup__item">
             Send us your works to
@@ -124,6 +104,7 @@ export default class Menu extends React.Component {
 }
 
 Menu.propTypes = {
+  routeProps: routePropsShape.isRequired,
   toggleStateContent: propTypes.func.isRequired,
   toggleStateMenu: propTypes.func.isRequired
 };

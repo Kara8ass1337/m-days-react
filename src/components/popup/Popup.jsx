@@ -1,13 +1,16 @@
 import React from 'react';
-import './popup.scss';
 import propTypes from 'prop-types';
 import autobind from 'autobind-decorator';
-import Menu from '../menu/Menu';
-import Donate from '../donate/Donate';
+
+import Menu from 'components/menu/Menu';
+import Donate from 'components/donate/Donate';
+import './popup.scss';
+
+import routePropsShape from 'assets/helpers/routePropsShape';
 
 export default class Popup extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
 
     this.state = {
       activeContent: 'menu'
@@ -28,14 +31,17 @@ export default class Popup extends React.Component {
   }
 
   render() {
-    const { isActive, toggleState } = this.props;
+    const { isActive, toggleState, routeProps } = this.props;
     const { activeContent } = this.state;
 
     return (
       <div className={`popup-wrapper ${isActive ? 'is-active' : ''}`}>
         <div className="popup">
           {activeContent === 'menu' && (
-            <Menu toggleStateContent={this.toggleStateContent} toggleStateMenu={toggleState} />
+            <Menu
+              routeProps={routeProps}
+              toggleStateContent={this.toggleStateContent}
+              toggleStateMenu={toggleState} />
           )}
 
           {activeContent === 'donate' && (
@@ -48,6 +54,7 @@ export default class Popup extends React.Component {
 }
 
 Popup.propTypes = {
+  routeProps: routePropsShape.isRequired,
   isActive: propTypes.bool,
   toggleState: propTypes.func.isRequired
 };

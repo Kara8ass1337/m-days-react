@@ -1,10 +1,13 @@
 import React from 'react';
+
+import MenuAndPopup from 'components/menu-and-popup/menuAndPopup';
 import './about.scss';
 
 export default class About extends React.PureComponent {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
 
+    this.routeProps = props;
     this.members = [
       // Александр Калугин
       {
@@ -186,65 +189,68 @@ export default class About extends React.PureComponent {
   }
 
   render() {
-    const { members } = this;
+    const { routeProps, members } = this;
 
     return (
-      <div className="about">
-        <div className="about__title">
-          Project Owners
-        </div>
-        <div className="about__members-wrapper">
-          {/* Олег Шилов */}
-          <div className="about__member">
-            <a href="https://vk.com/id15927588" target="_blank" rel="noopener noreferrer">
-              <img className="about__member__img" src="/img/about/shilov.jpg" alt="" />
-            </a>
-            <div className="about__member__name">
+      <React.Fragment>
+        <MenuAndPopup routeProps={routeProps} />
+        <div className="about">
+          <div className="about__title">
+            Project Owners
+          </div>
+          <div className="about__members-wrapper">
+            {/* Олег Шилов */}
+            <div className="about__member">
               <a href="https://vk.com/id15927588" target="_blank" rel="noopener noreferrer">
-                Oleg
-                <br />
-                Shilov
-              </a>
-            </div>
-          </div>
-          {/* Гордей Переходов */}
-          <div className="about__member">
-            <a href="https://vk.com/likilo" target="_blank" rel="noopener noreferrer">
-              <img className="about__member__img" src="/img/about/perekhodov.jpg" alt="" />
-            </a>
-            <div className="about__member__name">
-              <a href="https://vk.com/likilo" target="_blank" rel="noopener noreferrer">
-                Gordey
-                <br />
-                Perekhodov
-              </a>
-            </div>
-          </div>
-        </div>
-        <div className="about__title">
-          Project Members
-        </div>
-        <div className="about__members-wrapper">
-          {members.map(memberCur => (
-            <div key={memberCur.id} className="about__member">
-              <a href={memberCur.href} target="_blank" rel="noopener noreferrer">
-                <img className="about__member__img" src={memberCur.img} alt="" />
+                <img className="about__member__img" src="/img/about/shilov.jpg" alt="" />
               </a>
               <div className="about__member__name">
-                <a href={memberCur.href} target="_blank" rel="noopener noreferrer">
-                  <span>
-                    {memberCur.name}
-                  </span>
+                <a href="https://vk.com/id15927588" target="_blank" rel="noopener noreferrer">
+                  Oleg
                   <br />
-                  <span>
-                    {memberCur.surname}
-                  </span>
+                  Shilov
                 </a>
               </div>
             </div>
-          ))}
+            {/* Гордей Переходов */}
+            <div className="about__member">
+              <a href="https://vk.com/likilo" target="_blank" rel="noopener noreferrer">
+                <img className="about__member__img" src="/img/about/perekhodov.jpg" alt="" />
+              </a>
+              <div className="about__member__name">
+                <a href="https://vk.com/likilo" target="_blank" rel="noopener noreferrer">
+                  Gordey
+                  <br />
+                  Perekhodov
+                </a>
+              </div>
+            </div>
+          </div>
+          <div className="about__title">
+            Project Members
+          </div>
+          <div className="about__members-wrapper">
+            {members.map(memberCur => (
+              <div key={memberCur.id} className="about__member">
+                <a href={memberCur.href} target="_blank" rel="noopener noreferrer">
+                  <img className="about__member__img" src={memberCur.img} alt="" />
+                </a>
+                <div className="about__member__name">
+                  <a href={memberCur.href} target="_blank" rel="noopener noreferrer">
+                    <span>
+                      {memberCur.name}
+                    </span>
+                    <br />
+                    <span>
+                      {memberCur.surname}
+                    </span>
+                  </a>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
-      </div>
+      </React.Fragment>
     );
   }
 }

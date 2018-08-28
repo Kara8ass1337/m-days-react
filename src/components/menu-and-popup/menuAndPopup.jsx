@@ -4,6 +4,8 @@ import autobind from 'autobind-decorator';
 import MenuBtn from 'components/menu-btn/MenuBtn';
 import Popup from 'components/popup/Popup';
 
+import routePropsShape from 'assets/helpers/routePropsShape';
+
 export default class MenuAndPopup extends React.Component {
   constructor(props) {
     super(props);
@@ -34,12 +36,17 @@ export default class MenuAndPopup extends React.Component {
 
   render() {
     const { menuIsActive } = this.state;
+    const { routeProps } = this.props;
 
     return (
       <React.Fragment>
         <MenuBtn isActive={menuIsActive} toggleState={this.toggleMenuState} />
-        <Popup isActive={menuIsActive} toggleState={this.toggleMenuState} />
+        <Popup routeProps={routeProps} isActive={menuIsActive} toggleState={this.toggleMenuState} />
       </React.Fragment>
     );
   }
 }
+
+MenuAndPopup.propTypes = {
+  routeProps: routePropsShape.isRequired,
+};
