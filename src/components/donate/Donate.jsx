@@ -107,12 +107,14 @@ export default class Donate extends React.Component {
                   Input this number:
                   <br />
                   +7 965 422 59 82
+                  {/* eslint-disable */}
                   <div
                     className="pay-item__instruction__close"
                     title="Close"
                     onClick={this.handleCloseQiwiClick}>
                     x
                   </div>
+                  {/* eslint-enable */}
                 </div>
               )}
             </button>

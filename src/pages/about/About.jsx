@@ -1,7 +1,6 @@
 import React from 'react';
 import MenuAndPopup from 'components/menu-and-popup/menuAndPopup';
 import LinkExternal from 'components/linkExternal/LinkExternal';
-import routePropsShape from 'assets/helpers/routePropsShape';
 import members from './members';
 import './about.scss';
 
@@ -78,7 +77,3 @@ export default class About extends React.PureComponent {
     );
   }
 }
-
-About.propTypes = {
-  routeProps: routePropsShape
-};
