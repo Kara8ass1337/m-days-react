@@ -13,8 +13,21 @@ export default class Popup extends React.Component {
     super(props);
 
     this.state = {
-      activeContent: 'menu'
+      activeContent: 'menu',
+      isInit: true
     };
+  }
+
+  componentWillMount() {
+
+  }
+
+  componentDidMount() {
+    setTimeout(() => {
+      this.setState({
+        isInit: false
+      });
+    }, 50); // prevent transition of element when it's got to DOM
   }
 
   /**
@@ -32,10 +45,10 @@ export default class Popup extends React.Component {
 
   render() {
     const { isActive, toggleState, routeProps } = this.props;
-    const { activeContent } = this.state;
+    const { activeContent, isInit } = this.state;
 
     return (
-      <div className={`popup-wrapper ${isActive ? 'is-active' : ''}`}>
+      <div className={`popup-wrapper ${isActive ? 'is-active' : ''} ${isInit ? 'is-init' : ''}`}>
         <div className="popup">
           {activeContent === 'menu' && (
             <Menu
