@@ -61,40 +61,57 @@ export default class Bg extends React.Component {
   }
 
   componentDidMount() {
-    this.bgInit();
+    this.isMount = true;
+
+    // todo: поправить этот грязный хак
+    setTimeout(async () => {
+      this.timer = await this.bgInit();
+    }, 0);
   }
 
   componentWillUnmount() {
+    this.isMount = false;
+
     clearTimeout(this.timer);
   }
 
 
   async changeBg() {
+    const { isMount } = this;
+
     const { bgNext } = this.state;
 
-    this.setState({
-      bg: bgNext
-    });
+    if (isMount) {
+      this.setState({
+        bg: bgNext
+      });
+    }
 
     const dataNext = await Bg.getData();
 
-    this.setState({
-      bg: dataNext.data
-    });
+    if (isMount) {
+      this.setState({
+        bg: dataNext.data
+      });
+    }
   }
 
   async bgInit() {
+    const { isMount } = this;
+
     const data = await Bg.getData();
     const dataNext = await Bg.getData();
 
-    this.setState({
-      bg: data.data,
-      bgNext: dataNext.data
-    });
+    if (isMount) {
+      this.setState({
+        bg: data.data,
+        bgNext: dataNext.data
+      });
 
-    await this.changeBg();
+      await this.changeBg();
+    }
 
-    this.timer = setInterval(() => {
+    return Promise.resolve(() => setInterval(() => {
       this.setState({
         changing: true
       });
@@ -106,7 +123,7 @@ export default class Bg extends React.Component {
           changing: false
         });
       }, 500);
-    }, 12000);
+    }, 12000));
   }
 
   render() {
