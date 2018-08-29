@@ -1,7 +1,12 @@
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
+const GLOBALS = require('dot-globals')();
 const commonPaths = require('./paths');
+
+if (!GLOBALS.serverHost) {
+  console.warn('Warning: Server host does not specified!');
+}
 
 module.exports = {
   entry: commonPaths.entryPath,
@@ -58,14 +63,14 @@ module.exports = {
 };
 
 module.exports.devServer = {
-  host: 'localhost',
-  port: '3001',
-  /* proxy: {
-    '/' : {
+  host: GLOBALS.webpackHost,
+  port: GLOBALS.webpackPort,
+  proxy: {
+    '/': {
       target: GLOBALS.serverUrl,
       secure: false,
     },
-  }, */
+  },
   contentBase: path.resolve(__dirname, '../public'),
   publicPath: '/',
   historyApiFallback: {

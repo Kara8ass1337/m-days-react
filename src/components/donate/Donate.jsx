@@ -45,7 +45,7 @@ export default class Donate extends React.Component {
   }
 
   @autobind
-  handleGoBackClick(e) {
+  handleGoBackClick() {
     const { toggleStateContent } = this.props;
 
     toggleStateContent('menu');

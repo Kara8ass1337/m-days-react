@@ -16,10 +16,7 @@ export default function LinkExternal(props) {
 LinkExternal.propTypes = {
   href: propTypes.string,
   target: propTypes.string,
-  children: propTypes.oneOfType([
-    propTypes.string,
-    propTypes.element
-  ]).isRequired,
+  children: propTypes.node.isRequired,
 };
 
 LinkExternal.defaultProps = {
