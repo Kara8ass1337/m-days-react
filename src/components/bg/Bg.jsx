@@ -78,7 +78,6 @@ export default class Bg extends React.Component {
 
   async changeBg() {
     const { isMount } = this;
-
     const { bgNext } = this.state;
 
     if (isMount) {
@@ -111,7 +110,8 @@ export default class Bg extends React.Component {
       await this.changeBg();
     }
 
-    return Promise.resolve(() => setInterval(() => {
+
+    return Promise.resolve(setInterval(() => {
       this.setState({
         changing: true
       });

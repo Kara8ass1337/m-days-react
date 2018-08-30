@@ -1,5 +1,6 @@
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const path = require('path');
 const GLOBALS = require('dot-globals')();
 const commonPaths = require('./paths');
@@ -53,12 +54,23 @@ module.exports = {
   resolve: {
     extensions: ['*', '.js', '.jsx'],
     modules: [path.join(__dirname, '../src'), 'node_modules'],
+    alias: {
+      src: `${commonPaths.root}/src`
+    }
   },
   plugins: [
     new webpack.ProgressPlugin(),
     new HtmlWebpackPlugin({
       template: commonPaths.templatePath,
     }),
+    new CopyWebpackPlugin([{
+      from: `${commonPaths.root}/public/`,
+      to: `${commonPaths.root}/build/`,
+      ignore: [{
+        dots: true,
+        glob: 'img_bg_sources/**/*'
+      }]
+    }]),
   ],
 };
 
