@@ -1,4 +1,5 @@
 import React from 'react';
+import { v4 } from 'uuid';
 import MenuAndPopup from 'components/menu-and-popup/menuAndPopup';
 import LinkExternal from 'components/linkExternal/LinkExternal';
 import members from './members';
@@ -54,7 +55,7 @@ export default class About extends React.PureComponent {
           </div>
           <div className="about__members-wrapper">
             {members.map(memberCur => (
-              <div key={memberCur.id} className="about__member">
+              <div key={v4()} className="about__member">
                 <LinkExternal href={memberCur.href} target="_blank">
                   <img className="about__member__img" src={memberCur.img} alt="" />
                 </LinkExternal>

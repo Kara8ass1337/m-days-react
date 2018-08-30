@@ -1,7 +1,6 @@
 export default [
   // Александр Калугин
   {
-    id: 'Kalugin',
     href: 'https://vk.com/id16835086',
     img: '/img/about/aleksandr_kalugin.jpg',
     name: 'Alexander',
@@ -9,7 +8,6 @@ export default [
   },
   // Антон Ковалевский
   {
-    id: 'Kovalevsky',
     href: 'https://vk.com/id29768826',
     img: '/img/about/anton_kovalevsky.jpg',
     name: 'Anton',
@@ -17,7 +15,6 @@ export default [
   },
   // Виктория Зырянова
   {
-    id: 'Zyryanova',
     href: 'https://vk.com/id14828973',
     img: '/img/about/victory_zyryanova.jpg',
     name: 'Victoria',
@@ -25,7 +22,6 @@ export default [
   },
   // Кирилл Непомнящий
   {
-    id: 'Nepomnyashchy',
     href: 'https://vk.com/vospalenniy_mozg_djeka',
     img: '/img/about/kirill_nepomnyachsiy.jpg',
     name: 'Kirill',
@@ -33,7 +29,6 @@ export default [
   },
   // Наталья Бурнашкина
   {
-    id: 'Burnashkina',
     href: 'https://vk.com/id744565',
     img: '/img/about/natalya_burnashkina.jpg',
     name: 'Natalia',
@@ -41,7 +36,6 @@ export default [
   },
   // Слава Сорокин
   {
-    id: 'Sorokin',
     href: 'https://vk.com/tafarayphoto',
     img: '/img/about/slava_sorokin.jpg',
     name: 'Salva',
@@ -49,7 +43,6 @@ export default [
   },
   // Тональ Нагвальевна
   {
-    id: 'Nagualevna',
     href: 'https://vk.com/id4462838',
     img: '/img/about/tonal_nagvalievna.jpg',
     name: 'Tonal',
@@ -57,7 +50,6 @@ export default [
   },
   // Дмитрий Кольдяев
   {
-    id: 'Koldyaev',
     href: 'https://vk.com/id8767',
     img: '/img/about/dmitriy_koldyaev.jpg',
     name: 'Dmitriy',
@@ -65,7 +57,6 @@ export default [
   },
   // Виктория Чешко
   {
-    id: 'Cheshko',
     href: 'https://vk.com/id131625031',
     img: '/img/about/viktoria_cheshko.jpg',
     name: 'Victoria',
@@ -73,7 +64,6 @@ export default [
   },
   // София Головина
   {
-    id: 'Golovina',
     href: 'https://vk.com/id71689521',
     img: '/img/about/sofia_golovina.jpg',
     name: 'Sofia',
@@ -81,7 +71,6 @@ export default [
   },
   // Георгий Тверецкий
   {
-    id: 'Tvereckiy',
     href: 'https://vk.com/id3584626',
     img: '/img/about/georgiy_tveretskiy.jpg',
     name: 'George',
@@ -89,7 +78,6 @@ export default [
   },
   // Анна Салтыкова
   {
-    id: 'Saltykova',
     href: 'https://vk.com/id188141450',
     img: '/img/about/anna_saltykova.jpg',
     name: 'Anna',
@@ -97,7 +85,6 @@ export default [
   },
   // Анна Раевская
   {
-    id: 'Raevskaya',
     href: 'https://vk.com/id9425559',
     img: '/img/about/anna_raevskaya.jpg',
     name: 'Anna',
@@ -105,7 +92,6 @@ export default [
   },
   // Ksenia Mirklis
   {
-    id: 'Mirklis',
     href: 'https://vk.com/mirklis',
     img: '/img/about/ksenia_mirklis.jpg',
     name: 'Ksenia',
@@ -113,7 +99,6 @@ export default [
   },
   // Анна Корнеенкова
   {
-    id: 'Korneenkova',
     href: 'http://vk.com/anna_noir',
     img: '/img/about/anna_korneenkova.jpg',
     name: 'Annd',
@@ -121,7 +106,6 @@ export default [
   },
   // Юлия Елизарова
   {
-    id: 'Elizarova',
     href: 'http://vk.com/elizarova_fot',
     img: '/img/about/juliya_elizarova.jpg',
     name: 'Yuliya',
@@ -129,7 +113,6 @@ export default [
   },
   // Анастасия Дунаева
   {
-    id: 'Dunaeva',
     href: 'https://vk.com/id56092039',
     img: '/img/about/anastasia_dunaeva.jpg',
     name: 'Anastasia',
@@ -137,7 +120,6 @@ export default [
   },
   // Надежда Духанова
   {
-    id: 'Duhanova',
     href: 'https://vk.com/id8546188',
     img: '/img/about/nadezhda_duhanova.jpg',
     name: 'Nadezhda',
@@ -145,7 +127,6 @@ export default [
   },
   // Annie Autumn
   {
-    id: 'Autumn',
     href: 'https://vk.com/autumn_space',
     img: '/img/about/annie_autumn.jpg',
     name: 'Annie',
@@ -153,7 +134,6 @@ export default [
   },
   // Катерина Салдаева
   {
-    id: 'Saldaeva',
     href: 'https://vk.com/awayfromlights',
     img: '/img/about/katerina_saldaeva.jpg',
     name: 'Katerina',
@@ -161,7 +141,6 @@ export default [
   },
   // Виктория Майонез
   {
-    id: 'Maionez',
     href: 'https://vk.com/id10012750',
     img: '/img/about/viktoria_maiones.jpg',
     name: 'Victoria',
@@ -169,7 +148,6 @@ export default [
   },
   // Vladimir Deyev
   {
-    id: 'Deyev',
     href: 'https://vk.com/volodyalovesyou',
     img: '/img/about/vladimir_deyev.jpg',
     name: 'Vladimir',

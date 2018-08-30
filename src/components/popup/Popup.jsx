@@ -18,16 +18,16 @@ export default class Popup extends React.Component {
     };
   }
 
-  componentWillMount() {
-
-  }
-
   componentDidMount() {
-    setTimeout(() => {
+    this.timer = setTimeout(() => {
       this.setState({
         isInit: false
       });
     }, 50); // prevent transition of element when it's got to DOM
+  }
+
+  componentWillUnmount() {
+    clearTimeout(this.timer);
   }
 
   /**
