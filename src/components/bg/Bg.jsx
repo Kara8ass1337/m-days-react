@@ -60,55 +60,39 @@ export default class Bg extends React.Component {
     };
   }
 
-  componentDidMount() {
-    this.isMount = true;
-
-    // todo: поправить этот грязный хак
-    setTimeout(async () => {
-      this.timer = await this.bgInit();
-    }, 0);
+  async componentDidMount() {
+    this.timer = await this.bgInit();
   }
 
   componentWillUnmount() {
-    this.isMount = false;
-
     clearTimeout(this.timer);
   }
 
 
   async changeBg() {
-    const { isMount } = this;
     const { bgNext } = this.state;
 
-    if (isMount) {
-      this.setState({
-        bg: bgNext
-      });
-    }
+    this.setState({
+      bg: bgNext
+    });
 
     const dataNext = await Bg.getData();
 
-    if (isMount) {
-      this.setState({
-        bg: dataNext.data
-      });
-    }
+    this.setState({
+      bg: dataNext.data
+    });
   }
 
   async bgInit() {
-    const { isMount } = this;
-
     const data = await Bg.getData();
     const dataNext = await Bg.getData();
 
-    if (isMount) {
-      this.setState({
-        bg: data.data,
-        bgNext: dataNext.data
-      });
+    this.setState({
+      bg: data.data,
+      bgNext: dataNext.data
+    });
 
-      await this.changeBg();
-    }
+    await this.changeBg();
 
 
     return Promise.resolve(setInterval(() => {
