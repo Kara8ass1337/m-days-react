@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import propTypes from 'prop-types';
 import autobind from 'autobind-decorator';
 
@@ -50,16 +51,21 @@ export default class Popup extends React.Component {
     return (
       <div className={`popup-wrapper ${isActive ? 'is-active' : ''} ${isInit ? 'is-init' : ''}`}>
         <div className="popup">
-          {activeContent === 'menu' && (
-            <Menu
-              routeProps={routeProps}
-              toggleStateContent={this.toggleStateContent}
-              toggleStateMenu={toggleState} />
-          )}
+          <ReactCSSTransitionGroup
+            transitionName="popup"
+            transitionEnterTimeout={300}
+            transitionLeaveTimeout={300}>
+            {activeContent === 'menu' && (
+              <Menu
+                routeProps={routeProps}
+                toggleStateContent={this.toggleStateContent}
+                toggleStateMenu={toggleState} />
+            )}
 
-          {activeContent === 'donate' && (
-            <Donate toggleStateContent={this.toggleStateContent} />
-          )}
+            {activeContent === 'donate' && (
+              <Donate toggleStateContent={this.toggleStateContent} />
+            )}
+          </ReactCSSTransitionGroup>
         </div>
       </div>
     );

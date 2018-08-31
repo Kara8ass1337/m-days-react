@@ -67,6 +67,7 @@
     height: 100%;
     font-size: 24px;
     padding: 10px;
+    overflow: hidden;
 
     &__close {
       position: absolute;
@@ -82,4 +83,24 @@
       }
     }
   }
+}
+
+//animation
+.qiwi-enter {
+  opacity: 0.01;
+}
+
+.qiwi-enter.qiwi-enter-active {
+  opacity: 1;
+  transition: opacity 500ms ease-in;
+}
+
+.qiwi-leave {
+  opacity: 1;
+}
+
+.qiwi-leave.qiwi-leave-active {
+  opacity: 0.01;
+  transition: opacity 300ms ease-in;
+  height: 0;
 }

@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import './donate.scss';
 import propTypes from 'prop-types';
 import autobind from 'autobind-decorator';
@@ -93,30 +94,35 @@ export default class Donate extends React.Component {
               type="button"
               className={`pay-item ${instructionIsActive ? 'instruction-is-active' : ''}`}
               onClick={this.handleQiwiClick}>
-              {!instructionIsActive && (
-                <div className="pay-item__btn qiwi" />
-              )}
+              <ReactCSSTransitionGroup
+                transitionName="qiwi"
+                transitionEnterTimeout={500}
+                transitionLeaveTimeout={300}>
+                {!instructionIsActive && (
+                  <div className="pay-item__btn qiwi" />
+                )}
 
-              {instructionIsActive && (
-                <div className="pay-item__instruction">
-                  Go to&nbsp;
-                  <LinkExternal href="https://visa.qiwi.ru/transfer/form.action" target="_blank">
-                    link.
-                  </LinkExternal>
-                  <br />
-                  Input this number:
-                  <br />
-                  +7 965 422 59 82
-                  {/* eslint-disable */}
-                  <div
-                    className="pay-item__instruction__close"
-                    title="Close"
-                    onClick={this.handleCloseQiwiClick}>
-                    x
+                {instructionIsActive && (
+                  <div className="pay-item__instruction">
+                    Go to&nbsp;
+                    <LinkExternal href="https://visa.qiwi.ru/transfer/form.action" target="_blank">
+                      link.
+                    </LinkExternal>
+                    <br />
+                    Input this number:
+                    <br />
+                    +7 965 422 59 82
+                    {/* eslint-disable */}
+                    <div
+                      className="pay-item__instruction__close"
+                      title="Close"
+                      onClick={this.handleCloseQiwiClick}>
+                      x
+                    </div>
+                    {/* eslint-enable */}
                   </div>
-                  {/* eslint-enable */}
-                </div>
-              )}
+                )}
+              </ReactCSSTransitionGroup>
             </button>
             <div className="pay-item">
               <div className="pay-item__btn webmoney">

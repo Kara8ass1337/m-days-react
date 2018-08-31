@@ -94,7 +94,6 @@ export default class Bg extends React.Component {
 
     await this.changeBg();
 
-
     return Promise.resolve(setInterval(() => {
       this.setState({
         changing: true

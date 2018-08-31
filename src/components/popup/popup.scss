@@ -1,5 +1,4 @@
 .popup-wrapper {
-  opacity: 0;
   position: fixed;
   z-index: 10;
   width: 100%;
@@ -17,7 +16,7 @@
   background: rgba(0, 0, 0, 0.95);
   transform: translateY(-200vh) translateZ(0);
   transition: all ease 0.3s 0s;
-  will-change: transform, opacity;
+  will-change: transform;
 
   &.is-init {
     transition: none;
@@ -25,7 +24,6 @@
 
   &.is-active {
     transform: translateY(0) translateZ(0);
-    opacity: 1;
   }
 }
 
@@ -66,4 +64,23 @@
     margin-top: 20px;
     font-size: 24px;
   }
+}
+
+//animation
+.popup-enter {
+  opacity: 0.01;
+}
+
+.popup-enter.popup-enter-active {
+  opacity: 1;
+  transition: opacity 300ms ease-in;
+}
+
+.popup-leave {
+  opacity: 1;
+}
+
+.popup-leave.popup-leave-active {
+  opacity: 0.01;
+  transition: opacity 300ms ease-in;
 }
