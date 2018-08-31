@@ -4,8 +4,8 @@ import propTypes from 'prop-types';
 import autobind from 'autobind-decorator';
 import { Link } from 'react-router-dom';
 import routePropsShape from 'assets/helpers/routePropsShape';
-import BtnLink from 'components/btnLink/BtnLink';
-import LinkExternal from 'components/linkExternal/LinkExternal';
+import BtnLink from 'components/BtnLink';
+import LinkExternal from 'components/LinkExternal';
 
 export default class Menu extends React.Component {
   @autobind

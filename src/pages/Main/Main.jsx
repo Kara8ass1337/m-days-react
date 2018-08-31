@@ -1,7 +1,7 @@
 import React from 'react';
-import ProgressIndicator from 'components/progressIndicator/ProgressIndicator';
-import MenuAndPopup from 'components/menu-and-popup/menuAndPopup';
-import Bg from 'components/bg/Bg';
+import ProgressIndicator from 'components/ProgressIndicator';
+import MenuAndPopup from 'components/MenuAndPopup';
+import Bg from 'components/Bg';
 import './main.scss';
 
 export default class Main extends React.Component {

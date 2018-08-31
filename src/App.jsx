@@ -2,8 +2,8 @@ import React from 'react';
 import { hot } from 'react-hot-loader';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
-import Main from './pages/main/Main';
-import About from './pages/about/About';
+import Main from './pages/Main/Main';
+import About from './pages/About/About';
 import './assets/styles/styles.scss';
 
 const App = () => (

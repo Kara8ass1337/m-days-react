@@ -1,8 +1,8 @@
 import React from 'react';
 import autobind from 'autobind-decorator';
 
-import MenuBtn from 'components/menu-btn/MenuBtn';
-import Popup from 'components/popup/Popup';
+import MenuBtn from 'components/MenuBtn';
+import Popup from 'components/Popup';
 
 import routePropsShape from 'assets/helpers/routePropsShape';
 

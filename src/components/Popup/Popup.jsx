@@ -3,8 +3,8 @@ import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import propTypes from 'prop-types';
 import autobind from 'autobind-decorator';
 
-import Menu from 'components/menu/Menu';
-import Donate from 'components/donate/Donate';
+import Menu from 'components/Menu';
+import Donate from 'components/Donate';
 import './popup.scss';
 
 import routePropsShape from 'assets/helpers/routePropsShape';

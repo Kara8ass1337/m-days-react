@@ -3,8 +3,8 @@ import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import './donate.scss';
 import propTypes from 'prop-types';
 import autobind from 'autobind-decorator';
-import BtnLink from 'components/btnLink/BtnLink';
-import LinkExternal from 'components/linkExternal/LinkExternal';
+import BtnLink from 'components/BtnLink';
+import LinkExternal from 'components/LinkExternal';
 import payPalKey from './payPalKey';
 
 export default class Donate extends React.Component {

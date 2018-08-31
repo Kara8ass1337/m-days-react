@@ -1,7 +1,7 @@
 import React from 'react';
 import { v4 } from 'uuid';
-import MenuAndPopup from 'components/menu-and-popup/menuAndPopup';
-import LinkExternal from 'components/linkExternal/LinkExternal';
+import MenuAndPopup from 'components/MenuAndPopup';
+import LinkExternal from 'components/LinkExternal';
 import members from './members';
 import './about.scss';
 
