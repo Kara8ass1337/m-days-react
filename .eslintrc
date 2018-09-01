@@ -12,6 +12,7 @@
     "fetch": true
   },
   "rules": {
+    "linebreak-style": "off",
     "comma-dangle": "off",
     "indent": ["error", 2],
     "react/prefer-stateless-function": "warn",
