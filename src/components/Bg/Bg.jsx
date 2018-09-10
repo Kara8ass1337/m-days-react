@@ -79,7 +79,7 @@ export default class Bg extends React.Component {
     const dataNext = await Bg.getData();
 
     this.setState({
-      bg: dataNext.data
+      bgNext: dataNext.data
     });
   }
 
