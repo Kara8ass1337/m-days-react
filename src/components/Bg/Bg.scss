@@ -1,5 +1,5 @@
 .bg,
-.next-bg {
+.bgNext {
   position: absolute;
   z-index: -1;
   top: 0;
@@ -10,14 +10,15 @@
   background-size: cover;
 }
 
-.next-bg {
+.bgNext {
   left: -200%;
 }
 
 .bg {
   opacity: 1;
+  transition: opacity ease 0.3s 0s;
 
-  &.changing {
+  &.isChanging {
     opacity: 0;
   }
 }

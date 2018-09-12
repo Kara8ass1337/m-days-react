@@ -1,7 +1,7 @@
 import React from 'react';
-import './progress-indicator.scss';
 import twoDigitsAlways from 'assets/helpers/twoDigitsAlways';
 import moment from 'moment';
+import styles from './ProgressIndicator.scss';
 
 moment.locale('en-bgInit');
 
@@ -70,54 +70,54 @@ export default class ProgressIndicator extends React.PureComponent {
     const { values } = this.state;
 
     return (
-      <div className="progress-indicator">
-        <div className="progress-indicator__shadow">
-          <div className="progress-indicator__wrapper">
-            <div className="progress-indicator__left">
-              <div className="progress-indicator__year">
+      <div className={styles.progressIndicator}>
+        <div className={styles.progressIndicatorShadow}>
+          <div className={styles.progressIndicatorWrapper}>
+            <div className={styles.progressIndicatorLeft}>
+              <div className={styles.progressIndicatorYear}>
                 <span>
                   {values.year}
                 </span>
               </div>
-              <div className="progress-indicator__month">
+              <div className={styles.progressIndicatorMonth}>
                 <span>
                   {`${values.day}
-                      ${values.monthText}`}
+                    ${values.monthText}`}
                 </span>
               </div>
             </div>
-            <div className="progress-indicator__center">
-              <div className="progress-indicator__time">
-                <span className="progress-indicator__time__hours">
+            <div className={styles.progressIndicatorCenter}>
+              <div className={styles.progressIndicatorTime}>
+                <span className={styles.progressIndicatorTimeHours}>
                   {twoDigitsAlways(values.hours)}
                   :
                 </span>
-                <span className="progress-indicator__time__minutes">
+                <span className={styles.progressIndicatorTimeMinutes}>
                   {twoDigitsAlways(values.minutes)}
                 </span>
-                <span className="progress-indicator__time__seconds">
+                <span className={styles.progressIndicatorTimeSeconds}>
                   {twoDigitsAlways(values.seconds)}
                 </span>
               </div>
-              <div className="progress-indicator__progress-bar">
-                <div className="progress-indicator__progress-bar__bg" />
+              <div className={styles.progressIndicatorProgressBar}>
+                <div className={styles.progressIndicatorProgressBarBg} />
                 <div
-                  className="progress-indicator__progress-bar__walking"
+                  className={styles.progressIndicatorProgressBarWalking}
                   style={{ width: `${values.progressFull}%` }} />
               </div>
-              <div className="progress-indicator__day">
+              <div className={styles.progressIndicatorDay}>
                 {`${values.dayCount} of ${values.daysInYear} `}
                 monochrome&nbsp;days
               </div>
             </div>
-            <div className="progress-indicator__right">
-              <div className="progress-indicator__percent">
+            <div className={styles.progressIndicatorRight}>
+              <div className={styles.progressIndicatorPercent}>
                 <span>
                   {values.progressShort}
                   %
                 </span>
               </div>
-              <div className="progress-indicator__percent-full">
+              <div className={styles.progressIndicatorPercentFull}>
                 <span>
                   {values.progressFull}
                   %

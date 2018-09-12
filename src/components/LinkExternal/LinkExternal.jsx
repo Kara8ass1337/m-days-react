@@ -1,6 +1,5 @@
 import React from 'react';
 import propTypes from 'prop-types';
-import './link-external.scss';
 
 export default function LinkExternal(props) {
   const { href, target, children } = props;

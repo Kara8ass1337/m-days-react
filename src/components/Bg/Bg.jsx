@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
-import './bg.scss';
+import classNames from 'classnames';
+import styles from './Bg.scss';
 
 export default class Bg extends React.Component {
   /**
@@ -111,12 +112,16 @@ export default class Bg extends React.Component {
 
   render() {
     const { bg, bgNext, changing } = this.state;
-    const bgClassName = changing === true ? 'bg is-changing' : 'bg';
+    // const bgClassName = changing === true ? 'bg is-changing' : 'bg';
+    const bgClassName = classNames({
+      [styles.bg]: true,
+      [styles.isChanging]: changing === true
+    });
 
     return (
       <React.Fragment>
         <div className={bgClassName} style={{ backgroundImage: `url(img_bg/${bg})` }} />
-        <div className="next-bg" style={{ backgroundImage: `url(img_bg/${bgNext})` }} />
+        <div className={styles.bgNext} style={{ backgroundImage: `url(img_bg/${bgNext})` }} />
       </React.Fragment>
     );
   }

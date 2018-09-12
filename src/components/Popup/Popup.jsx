@@ -5,9 +5,10 @@ import autobind from 'autobind-decorator';
 
 import Menu from 'components/Menu';
 import Donate from 'components/Donate';
-import './popup.scss';
-
+import classNames from 'classnames';
 import routePropsShape from 'assets/helpers/routePropsShape';
+import styles from './Popup.scss';
+
 
 export default class Popup extends React.Component {
   constructor(props) {
@@ -48,11 +49,22 @@ export default class Popup extends React.Component {
     const { isActive, toggleState, routeProps } = this.props;
     const { activeContent, isInit } = this.state;
 
+    const popupWrapperClassName = classNames({
+      [styles.popupWrapper]: true,
+      [styles.isActive]: isActive === true,
+      [styles.isInit]: isInit === true
+    });
+
     return (
-      <div className={`popup-wrapper ${isActive ? 'is-active' : ''} ${isInit ? 'is-init' : ''}`}>
-        <div className="popup">
+      <div className={popupWrapperClassName}>
+        <div className={styles.popup}>
           <ReactCSSTransitionGroup
-            transitionName="popup"
+            transitionName={{
+              enter: styles.popupEnter,
+              enterActive: styles.popupEnterActive,
+              leave: styles.popupLeave,
+              leaveActive: styles.popupLeaveActive
+            }}
             transitionEnterTimeout={300}
             transitionLeaveTimeout={300}>
             {activeContent === 'menu' && (

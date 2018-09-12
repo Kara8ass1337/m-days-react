@@ -1,7 +1,8 @@
 import React from 'react';
-import './menu-btn.scss';
+import classNames from 'classnames';
 import propTypes from 'prop-types';
 import autobind from 'autobind-decorator';
+import styles from './MenuBtn.scss';
 
 export default class MenuBtn extends React.Component {
   @autobind
@@ -14,12 +15,17 @@ export default class MenuBtn extends React.Component {
   render() {
     const { isActive } = this.props;
 
+    const menuBtnClassName = classNames({
+      [styles.menuBtn]: true,
+      [styles.isActive]: isActive === true
+    });
+
     return (
       <button
         type="button"
-        className={`menu-btn ${isActive ? 'is-active' : ''}`}
+        className={menuBtnClassName}
         onClick={this.handleClick}>
-        <span className="menu-btn__helper" />
+        <span className={styles.menuBtnHelper} />
       </button>
     );
   }

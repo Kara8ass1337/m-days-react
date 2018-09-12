@@ -3,7 +3,7 @@ import { v4 } from 'uuid';
 import MenuAndPopup from 'components/MenuAndPopup';
 import LinkExternal from 'components/LinkExternal';
 import members from './members';
-import './about.scss';
+import styles from './About.scss';
 
 export default class About extends React.PureComponent {
   constructor(routeProps) {
@@ -18,17 +18,17 @@ export default class About extends React.PureComponent {
     return (
       <React.Fragment>
         <MenuAndPopup routeProps={routeProps} />
-        <div className="about">
-          <div className="about__title">
+        <div className={styles.about}>
+          <div className={styles.aboutTitle}>
             Project Owners
           </div>
-          <div className="about__members-wrapper">
+          <div className={styles.aboutMembersWrapper}>
             {/* Олег Шилов */}
-            <div className="about__member">
+            <div className={styles.aboutMember}>
               <LinkExternal href="https://vk.com/id15927588" target="_blank">
-                <img className="about__member__img" src="/img/about/shilov.jpg" alt="" />
+                <img className={styles.aboutMemberImg} src="/img/about/shilov.jpg" alt="" />
               </LinkExternal>
-              <div className="about__member__name">
+              <div className={styles.aboutMemberName}>
                 <LinkExternal href="https://vk.com/id15927588" target="_blank">
                   Oleg
                   <br />
@@ -37,11 +37,11 @@ export default class About extends React.PureComponent {
               </div>
             </div>
             {/* Гордей Переходов */}
-            <div className="about__member">
+            <div className={styles.aboutMember}>
               <LinkExternal href="https://vk.com/likilo" target="_blank">
-                <img className="about__member__img" src="/img/about/perekhodov.jpg" alt="" />
+                <img className={styles.aboutMemberImg} src="/img/about/perekhodov.jpg" alt="" />
               </LinkExternal>
-              <div className="about__member__name">
+              <div className={styles.aboutMemberName}>
                 <LinkExternal href="https://vk.com/likilo" target="_blank">
                   Gordey
                   <br />
@@ -50,16 +50,16 @@ export default class About extends React.PureComponent {
               </div>
             </div>
           </div>
-          <div className="about__title">
+          <div className={styles.aboutTitle}>
             Project Members
           </div>
-          <div className="about__members-wrapper">
+          <div className={styles.aboutMembersWrapper}>
             {members.map(memberCur => (
-              <div key={v4()} className="about__member">
+              <div key={v4()} className={styles.aboutMember}>
                 <LinkExternal href={memberCur.href} target="_blank">
-                  <img className="about__member__img" src={memberCur.img} alt="" />
+                  <img className={styles.aboutMemberImg} src={memberCur.img} alt="" />
                 </LinkExternal>
-                <div className="about__member__name">
+                <div className={styles.aboutMemberName}>
                   <LinkExternal href={memberCur.href} target="_blank">
                     <span>
                       {memberCur.name}

@@ -1,8 +1,8 @@
 import React from 'react';
 import autobind from 'autobind-decorator';
 import propTypes from 'prop-types';
-
-import './btn-link.scss';
+import classNames from 'classnames';
+import styles from './BtnLink.scss';
 
 export default class BtnLink extends React.Component {
   @autobind
@@ -15,8 +15,13 @@ export default class BtnLink extends React.Component {
   render() {
     const { children, className, title } = this.props;
 
+    const buttonClassName = classNames({
+      [styles.btnLink]: true,
+      [className]: true
+    });
+
     return (
-      <button type="button" className={`btn-link ${className}`} title={title} onClick={this.handleClick}>
+      <button type="button" className={buttonClassName} title={title} onClick={this.handleClick}>
         {children}
       </button>
     );

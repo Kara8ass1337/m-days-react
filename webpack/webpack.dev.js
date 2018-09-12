@@ -18,8 +18,9 @@ module.exports = {
             loader: 'css-loader',
             options: {
               sourceMap: true,
-              modules: false,
-              filename: '[name].[hash].css',
+              modules: true,
+              // filename: '[name].[hash].css',
+              localIdentName: '[local]___[hash:base64:5]',
             },
           },
           'sass-loader',

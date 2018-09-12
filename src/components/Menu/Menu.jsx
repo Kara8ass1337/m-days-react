@@ -1,11 +1,13 @@
 import React from 'react';
-import './menu.scss';
+import stylesPopup from 'components/Popup/Popup.scss';
+import classNames from 'classnames';
 import propTypes from 'prop-types';
 import autobind from 'autobind-decorator';
 import { Link } from 'react-router-dom';
 import routePropsShape from 'assets/helpers/routePropsShape';
 import BtnLink from 'components/BtnLink';
 import LinkExternal from 'components/LinkExternal';
+import styles from './Menu.scss';
 
 export default class Menu extends React.Component {
   @autobind
@@ -26,23 +28,34 @@ export default class Menu extends React.Component {
     const { routeProps } = this.props;
     const { match } = routeProps;
 
+    /**
+     *
+     * @param modifier {string}
+     */
+    function menuSocBtnClassNameWithModifier(modifier) {
+      return classNames({
+        [styles.menuSocBtn]: true,
+        [modifier]: true
+      });
+    }
+
     return (
-      <div className="menu">
-        <div className="popup__logo">
+      <div className={styles.menu}>
+        <div className={stylesPopup.popupLogo}>
           <img src="/img/logo.png" alt="" />
         </div>
-        <div className="popup__title">
+        <div className={stylesPopup.popupTitle}>
           Monochrome days
         </div>
-        <div className="popup__items-wrapper">
-          <div className="popup__item">
+        <div className={stylesPopup.popupItemsWrapper}>
+          <div className={stylesPopup.popupItem}>
             Photo project for bwlovers. Our website
             <br />
             displays the percentage of days passed this year
             <br />
             accompanied with best author&apos;s photos.
           </div>
-          <div className="popup__item">
+          <div className={stylesPopup.popupItem}>
             {match.path === '/about' && (
               <Link to="/" onClick={this.handleLinkClick}>
                 Go to main
@@ -55,7 +68,7 @@ export default class Menu extends React.Component {
               </Link>
             )}
           </div>
-          <div className="popup__item">
+          <div className={stylesPopup.popupItem}>
             Send us your works to
             <LinkExternal href="mailto:m-days@m-days.ru">
               m-days@m-days.ru
@@ -70,29 +83,29 @@ export default class Menu extends React.Component {
               #mdays
             </LinkExternal>
           </div>
-          <div className="popup__item">
+          <div className={stylesPopup.popupItem}>
             follow us at
           </div>
-          <div className="popup__item">
-            <div className="menu__soc-btns-wrapper">
-              <div className="menu__soc-btn insta">
+          <div className={stylesPopup.popupItem}>
+            <div className={styles.menuSocBtnsWrapper}>
+              <div className={menuSocBtnClassNameWithModifier('inst')}>
                 <LinkExternal href="https://instagram.com/m0nochrome_days/" target="_blank">
                   <img src="/img/insta.png" alt="" />
                 </LinkExternal>
               </div>
-              <div className="menu__soc-btn vk">
+              <div className={menuSocBtnClassNameWithModifier('vk')}>
                 <LinkExternal href="https://vk.com/mono_days" target="_blank">
                   <img src="/img/vk.png" alt="" />
                 </LinkExternal>
               </div>
-              <div className="menu__soc-btn twit">
+              <div className={menuSocBtnClassNameWithModifier('tw')}>
                 <LinkExternal href="https://twitter.com/MonochromeDays" target="_blank">
                   <img src="/img/twitter.png" alt="" />
                 </LinkExternal>
               </div>
             </div>
           </div>
-          <div className="popup__item">
+          <div className={stylesPopup.popupItem}>
             <BtnLink onClick={this.handleDonateClick}>
               Donate
             </BtnLink>

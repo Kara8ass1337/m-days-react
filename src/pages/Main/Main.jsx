@@ -2,7 +2,6 @@ import React from 'react';
 import ProgressIndicator from 'components/ProgressIndicator';
 import MenuAndPopup from 'components/MenuAndPopup';
 import Bg from 'components/Bg';
-import './main.scss';
 
 export default class Main extends React.Component {
   constructor(routeProps) {
