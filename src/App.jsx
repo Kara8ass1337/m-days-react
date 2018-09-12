@@ -5,10 +5,11 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Main from './pages/Main/Main';
 import About from './pages/About/About';
 import './assets/styles/styles.scss';
+import stylesMainWrapper from './assets/styles/mainWrapper.scss';
 
 const App = () => (
   <Router>
-    <div className="mainWrapper">
+    <div className={stylesMainWrapper.mainWrapper}>
       <Route exact path="/" component={Main} />
       <Route path="/about" component={About} />
     </div>
