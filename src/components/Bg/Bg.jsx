@@ -112,7 +112,7 @@ export default class Bg extends React.Component {
 
   render() {
     const { bg, bgNext, changing } = this.state;
-    // const bgClassName = changing === true ? 'bg is-changing' : 'bg';
+
     const bgClassName = classNames({
       [styles.bg]: true,
       [styles.isChanging]: changing === true
